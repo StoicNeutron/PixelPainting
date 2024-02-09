@@ -7,3 +7,5 @@
   <li>Reset New </li>
   <li>Change Pixels Size</li>
 </ul>
+
+<h6>Author: Samnang Thorn</h6>
