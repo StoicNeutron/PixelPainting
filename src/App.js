@@ -10,6 +10,54 @@ export default function App() {
     setSelectedColor(color);
   }
 
+  // function genCol(size) {
+  //   const col = [];
+  //   for (let i = 0; i < size; i++) {
+  //     if (size === 6) {
+  //       col.push(<Button key={i} style={{ width: '80px', height: '80px' }} color={selectedColor}/>);
+  //     } else if (size === 12) {
+  //       col.push(<Button key={i} style={{ width: '40px', height: '40px' }} color={selectedColor}/>);
+  //     } else if (size === 24) {
+  //       col.push(<Button key={i} style={{ width: '20px', height: '20px' }} color={selectedColor}/>);
+  //     }
+  //   }
+  //   return col;
+  // }
+
+  function genCol(size) {
+    const col = [];
+    const buttonStyle = {
+      width: '20px',
+      height: '20px'
+    };
+    if (size === 6) {
+      buttonStyle.height = '80px';
+      buttonStyle.width = '80px';
+    } else if (size === 12) {
+      buttonStyle.height = '40px';
+      buttonStyle.width = '40px';
+    }
+    for (let i = 0; i < size; i++) {
+      col.push(
+        <Button key={i} style={buttonStyle} color={selectedColor}/>
+      );
+    }
+    return col;
+  }
+  
+
+  function genRow(size) {
+    const row = [];
+    for (let i = 0; i < size; i++) {
+      row.push(
+        <div key={i} className="board_row">
+          {genCol(size)}
+        </div>
+      );
+    }
+    return row;
+  }
+
   return (
     <div className="app">
       <nav className='color_selection'>
@@ -23,54 +71,15 @@ export default function App() {
         <button className="selection" style={{ backgroundColor: "black" }} onClick={() => onColorSelectHandler("black")}>Black</button>
       </nav>
       <div className="board">
-        <div className="board_row">
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
+        
+        {genRow(6)}
+
+        <div className='size_change'>
+          <button className="size_button" onClick={() => onColorSelectHandler("red")}>6x6</button>
+          <button className="size_button" onClick={() => onColorSelectHandler("green")}>12x12</button>
+          <button className="size_button" onClick={() => onColorSelectHandler("blue")}>24x24</button>
         </div>
-        <div className="board_row">
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-        </div>
-        <div className="board_row">
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-        </div>
-        <div className="board_row">
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-        </div>
-        <div className="board_row">
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-        </div>
-        <div className="board_row">
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-          <Button color={selectedColor} />
-        </div>
+
       </div>
     </div>);
 }

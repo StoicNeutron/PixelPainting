@@ -3,6 +3,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-top: 50px;
 }
 
 button{
@@ -12,7 +13,26 @@ button{
   height: 80px;
 }
 
+/* button .button_80{
+  width: 80px;
+  height: 80px;
+} */
+
+.size_button{
+  border-radius: 10px;
+  margin: 20px;
+  background-color: white;
+  font-weight: bold;
+  border-color: black;
+}
+
 .color_selection{
   display: flex;
   justify-content: center;
+}
+
+.size_change{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
