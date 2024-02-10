@@ -5,41 +5,22 @@ import Button from './Button.js';
 export default function App() {
 
   const [selectedColor, setSelectedColor] = useState("white");
+  const [selectedSize, setSelectedSize] = useState(6);
+
+  function onSizeSelectHandler(size) {
+    setSelectedSize(size);
+  }
 
   function onColorSelectHandler(color) {
     setSelectedColor(color);
   }
 
-  // function genCol(size) {
-  //   const col = [];
-  //   for (let i = 0; i < size; i++) {
-  //     if (size === 6) {
-  //       col.push(<Button key={i} style={{ width: '80px', height: '80px' }} color={selectedColor}/>);
-  //     } else if (size === 12) {
-  //       col.push(<Button key={i} style={{ width: '40px', height: '40px' }} color={selectedColor}/>);
-  //     } else if (size === 24) {
-  //       col.push(<Button key={i} style={{ width: '20px', height: '20px' }} color={selectedColor}/>);
-  //     }
-  //   }
-  //   return col;
-  // }
-
   function genCol(size) {
     const col = [];
-    const buttonStyle = {
-      width: '20px',
-      height: '20px'
-    };
-    if (size === 6) {
-      buttonStyle.height = '80px';
-      buttonStyle.width = '80px';
-    } else if (size === 12) {
-      buttonStyle.height = '40px';
-      buttonStyle.width = '40px';
-    }
+
     for (let i = 0; i < size; i++) {
       col.push(
-        <Button key={i} style={buttonStyle} color={selectedColor}/>
+        <Button key={i} color={selectedColor} size={size}/>
       );
     }
     return col;
@@ -58,6 +39,12 @@ export default function App() {
     return row;
   }
 
+  function resetHandler(){
+    onColorSelectHandler("white");
+    onSizeSelectHandler(0);
+    genRow(0);
+  }
+
   return (
     <div className="app">
       <nav className='color_selection'>
@@ -72,12 +59,13 @@ export default function App() {
       </nav>
       <div className="board">
         
-        {genRow(6)}
+        {genRow(selectedSize)}
 
         <div className='size_change'>
-          <button className="size_button" onClick={() => onColorSelectHandler("red")}>6x6</button>
-          <button className="size_button" onClick={() => onColorSelectHandler("green")}>12x12</button>
-          <button className="size_button" onClick={() => onColorSelectHandler("blue")}>24x24</button>
+          <button className="size_button" onClick={() => onSizeSelectHandler(6)}>6x6</button>
+          <button className="size_button" onClick={() => onSizeSelectHandler(12)}>12x12</button>
+          <button className="size_button" onClick={() => onSizeSelectHandler(24)}>24x24</button>
+          <button className="size_button" onClick={() => resetHandler()}>Reset</button>
         </div>
 
       </div>
