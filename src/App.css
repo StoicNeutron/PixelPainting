@@ -6,12 +6,12 @@
   margin-top: 50px;
 }
 
-button{
-  border-radius: 0px;
-  background-color: white;
+.selection{
   width: 80px;
   height: 80px;
 }
+
+
 
 /* button .button_80{
   width: 80px;
@@ -24,6 +24,8 @@ button{
   background-color: white;
   font-weight: bold;
   border-color: black;
+  width: 80px;
+  height: 80px;
 }
 
 .color_selection{
