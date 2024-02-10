@@ -8,6 +8,6 @@
   <li>Change Pixels Size</li>
 </ul>
 
-<img src="[path/to/your/gif/file.gif](https://github.com/StoicNeutron/PixelPainting/blob/main/pixelpainting.gif)https://github.com/StoicNeutron/PixelPainting/blob/main/pixelpainting.gif">
+<img src="https://github.com/StoicNeutron/PixelPainting/blob/main/pixelpainting.gif">
 
 <h6>Author: Samnang Thorn</h6>
