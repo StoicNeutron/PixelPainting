@@ -30,7 +30,7 @@
   <li>Open the project folder with any IDE.</li>
   <li>Install dependencies by running either of the following commands. <code>npm install</code></li>
   <li>Once all dependencies are installed, you can start the development server by running: <code>npm start</code></li>
-  <li>After running the command, the development server will start, and your default web browser should open automatically, displaying the React application. If it doesn't, you can manually navigate to http://localhost:3000 in your browser.</li>
+  <li>After running the command, the development server will start, and your default web browser should open automatically, displaying the React application. If it doesn't, you can manually navigate to <code>http://localhost:3000</code> in your browser.</li>
 </ol>
 
 <h6>Author: Samnang Thorn</h6>
